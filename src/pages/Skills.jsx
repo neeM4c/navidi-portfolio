@@ -1,8 +1,15 @@
 import { useLang } from '../context/LangContext';
+import useSEO from '../hooks/useSEO';
 import { Server, Brain, Wrench, CheckCircle2 } from 'lucide-react';
 
 const Skills = () => {
   const { t, lang } = useLang();
+
+  useSEO({
+    title: `${t.skills.title} | ${t.name}`,
+    description: "Technical skills including Infrastructure, AI, and Development.",
+    canonicalUrl: 'https://nimanavidi.com/skills'
+  });
 
   const skillCategories = [
     {

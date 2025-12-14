@@ -31,7 +31,21 @@ export const content = {
             projects: "Portfolio",
             contact: "Contact"
         },
-        cta: "Explore Portfolio"
+        cta: "Explore Portfolio",
+        projectDetail: {
+            back: "Back to Projects",
+            features: "Key Features",
+            techStack: "Technology Stack",
+            gallery: "Gallery",
+            metrics: "Project Metrics"
+        },
+        notFound: {
+            message: "Oops! Page not found.",
+            button: "Go to Homepage"
+        },
+        trust: {
+            title: "Trusted by"
+        }
     },
     fa: {
         name: "نیما نویدی",
@@ -65,6 +79,20 @@ export const content = {
             projects: "نمونه‌کارها",
             contact: "تماس"
         },
-        cta: "مشاهده پورتفولیو"
+        cta: "مشاهده پورتفولیو",
+        projectDetail: {
+            back: "بازگشت به پروژه‌ها",
+            features: "ویژگی‌های کلیدی",
+            techStack: "پشته فناوری",
+            gallery: "گالری",
+            metrics: "سنجه‌های پروژه"
+        },
+        notFound: {
+            message: "اوه! صفحه‌ای یافت نشد.",
+            button: "برو به صفحه اصلی"
+        },
+        trust: {
+            title: "مورد اعتماد"
+        }
     }
 };

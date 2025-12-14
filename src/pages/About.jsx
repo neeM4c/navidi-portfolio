@@ -1,9 +1,16 @@
 import { useLang } from '../context/LangContext';
+import useSEO from '../hooks/useSEO';
 import { ChevronRight } from 'lucide-react';
 import profileImg from '../assets/profile1.png';
 
 const About = () => {
   const { t, lang } = useLang();
+
+  useSEO({
+    title: `${t.about.title} | ${t.name}`,
+    description: t.about.text,
+    canonicalUrl: 'https://nimanavidi.com/about'
+  });
 
   const infoList = [
     { label: lang === 'en' ? 'Birthday:' : 'تولد:', value: lang === 'en' ? '1985' : '۱۳۶۴' },

@@ -1,9 +1,16 @@
 import { useLang } from '../context/LangContext';
+import useSEO from '../hooks/useSEO';
 import { useState } from 'react';
 import { MapPin, Mail, Smartphone } from 'lucide-react';
 
 const Contact = () => {
   const { t, lang } = useLang();
+
+  useSEO({
+    title: `${t.contact.title} | ${t.name}`,
+    description: "Contact information for Nima Navidi.",
+    canonicalUrl: 'https://nimanavidi.com/contact'
+  });
 
   const [formData, setFormData] = useState({
     name: '',

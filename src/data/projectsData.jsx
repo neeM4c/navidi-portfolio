@@ -10,6 +10,7 @@ import projectAuto1 from '../assets/project-automation-1.png';
 export const getProjects = (lang) => [
     {
         id: 'retail-suite',
+        slug: 'enterprise-retail-it-orchestration-suite',
         featured: true,
         title: lang === 'en' ? 'Enterprise Retail IT Orchestration & Automation Suite' : 'سامانه جامع مدیریت و ارکستراسیون زیرساخت IT شعب',
         slogan: lang === 'en' ? '“Bridging the gap between Ad-hoc Scripting and Enterprise Orchestration.”' : '«گذار از اسکریپت‌نویسی سنتی به ارکستراسیون سازمانی.»',
@@ -29,10 +30,16 @@ export const getProjects = (lang) => [
         icon: <Server size={32} className="text-emerald-400" />,
         color: "from-emerald-500/20 to-teal-600/20",
         border: "border-emerald-500/30",
-        cols: "md:col-span-2"
+        cols: "md:col-span-2",
+        metrics: [
+            { value: "90%", label: lang === 'en' ? 'Reduction in MTTR' : 'کاهش در MTTR' },
+            { value: "75%", label: lang === 'en' ? 'Decrease in manual errors' : 'کاهش خطاهای دستی' },
+            { value: "50+", label: lang === 'en' ? 'Automated tasks' : 'وظایف خودکار' },
+        ]
     },
     {
         id: 'ai-time-sync',
+        slug: 'intelligent-time-drift-remediation-bot',
         featured: true,
         title: lang === 'en' ? 'Intelligent Time Drift Remediation Bot' : 'ربات هوشمند اصلاح اختلاف زمانی',
         slogan: lang === 'en' ? 'Precision Timing for Distributed Clusters' : 'زمان‌بندی دقیق برای کلاسترهای توزیع‌شده',
@@ -50,10 +57,15 @@ export const getProjects = (lang) => [
         icon: <Clock size={32} className="text-cyan-400" />,
         color: "from-cyan-500/20 to-blue-600/20",
         border: "border-cyan-500/30",
-        cols: "md:col-span-1"
+        cols: "md:col-span-1",
+        metrics: [
+            { value: "<1s", label: lang === 'en' ? 'Sync accuracy' : 'دقت همگام‌سازی' },
+            { value: "100%", label: lang === 'en' ? 'Uptime' : 'آپتایم' },
+        ]
     },
     {
         id: 'ai-studio',
+        slug: 'enterprise-generative-ai-studio',
         featured: true,
         title: lang === 'en' ? 'Enterprise Generative AI Studio' : 'استودیو هوش مصنوعی مولد سازمانی',
         slogan: lang === 'en' ? 'Automated Brand Asset Synthesis' : 'تولید خودکار دارایی‌های برند',
@@ -71,10 +83,15 @@ export const getProjects = (lang) => [
         icon: <PenTool size={32} className="text-purple-400" />,
         color: "from-purple-500/20 to-pink-600/20",
         border: "border-purple-500/30",
-        cols: "md:col-span-1"
+        cols: "md:col-span-1",
+        metrics: [
+            { value: "70%", label: lang === 'en' ? 'Faster design turnaround' : 'کاهش زمان طراحی' },
+            { value: "99%", label: lang === 'en' ? 'Brand consistency' : 'انطباق با برند' },
+        ]
     },
     {
         id: 'automation-scripts',
+        slug: 'sre-devops-utility-suite',
         title: lang === 'en' ? 'SRE & DevOps Utility Suite' : 'مجموعه ابزارهای SRE و DevOps',
         slogan: lang === 'en' ? 'Operational Efficiency through Code' : 'بهره‌وری عملیاتی از طریق کد',
         category: 'Tooling',
@@ -91,6 +108,10 @@ export const getProjects = (lang) => [
         icon: <Cpu size={32} className="text-amber-400" />,
         color: "from-amber-500/20 to-orange-600/20",
         border: "border-amber-500/30",
-        cols: "md:col-span-2"
+        cols: "md:col-span-2",
+        metrics: [
+            { value: "80%", label: lang === 'en' ? 'Time saved on daily tasks' : 'صرفه‌جویی در زمان' },
+            { value: "99.9%", label: lang === 'en' ? 'Data integrity' : 'یکپارچگی داده' },
+        ]
     }
 ];

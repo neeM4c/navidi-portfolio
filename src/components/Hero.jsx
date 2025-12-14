@@ -76,42 +76,42 @@ const Hero = () => {
   }, [subIndex, index, reverse, titles]);
 
   return (
-    <section id="hero" className="relative h-screen flex flex-col justify-center w-full overflow-hidden">
+    <section id="hero" className="relative h-screen flex flex-col justify-center w-full overflow-hidden bg-slate-900">
       {/* Background Image with Cinematic Overlay */}
       <div
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 opacity-20"
       >
         <div
-          className="absolute inset-0 bg-cover bg-[50%_40%] bg-no-repeat bg-scroll lg:bg-fixed scale-105 animate-[subtle-zoom_20s_infinite_alternate]"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed scale-105 animate-[subtle-zoom_20s_infinite_alternate]"
           style={{ backgroundImage: `url(${heroBg})` }}
         />
         {/* Dual Gradient Overlay - Darker for more contrast/premium feel */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#02060c]/95 to-[#040b14]/80"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#02060c] via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
       </div>
 
       <div className="relative z-10 px-8 md:px-16 lg:px-24 max-w-5xl">
-        <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 tracking-tight drop-shadow-2xl">
+        <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-4 tracking-tight drop-shadow-lg">
           {t.name}
         </h1>
 
-        <div className="text-2xl md:text-3xl text-slate-300 font-light flex items-center gap-3 mb-6 h-12">
-          <span className="opacity-60 font-thin">{lang === 'en' ? "I am an" : "من"}</span>
-          <span className="text-[#149ddd] font-medium tracking-wide relative">
+        <div className="text-xl md:text-2xl text-slate-300 font-light flex items-center gap-3 mb-6 h-12">
+          <span className="opacity-70">{lang === 'en' ? "I am a" : "من یک"}</span>
+          <span className="text-sky-400 font-medium tracking-wide relative">
             {text}
-            <span className="absolute -right-1 top-0 bottom-0 w-0.5 bg-[#149ddd] animate-blink shadow-[0_0_10px_#149ddd]"></span>
+            <span className="absolute -right-1 top-0 bottom-0 w-0.5 bg-sky-400 animate-blink shadow-[0_0_10px_#0ea5e9]"></span>
           </span>
         </div>
 
         {/* New Premium Tagline */}
-        <p className="text-lg md:text-xl text-slate-400 font-light max-w-2xl leading-relaxed border-l-2 border-[#149ddd]/50 pl-6 mb-12">
+        <p className="text-lg text-slate-400 max-w-2xl leading-relaxed border-l-2 border-sky-500/30 pl-6 mb-10">
           {tagline}
         </p>
 
         {/* CTA Button */}
         <div>
-          <a href="#projects" className="group inline-flex items-center gap-2 px-10 py-4 bg-transparent border border-[#149ddd] text-white rounded-full hover:bg-[#149ddd] transition-all duration-300 shadow-[0_0_20px_rgba(20,157,221,0.1)] hover:shadow-[0_0_30px_rgba(20,157,221,0.4)]">
-            <span className="tracking-widest text-xs font-bold uppercase">{t.cta}</span>
+          <a href="#projects" className="group inline-flex items-center gap-3 px-8 py-4 bg-sky-600 text-white rounded-lg hover:bg-sky-500 transition-all duration-300 shadow-lg shadow-sky-600/20 hover:shadow-xl hover:shadow-sky-500/30 transform hover:-translate-y-1">
+            <span className="tracking-wide font-semibold">{t.cta}</span>
           </a>
         </div>
       </div>

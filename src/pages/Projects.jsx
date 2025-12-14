@@ -1,14 +1,18 @@
-import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useLang } from '../context/LangContext';
+import useSEO from '../hooks/useSEO';
 import { ChevronRight } from 'lucide-react';
 import { getProjects } from '../data/projectsData';
-import ProjectModal from './ProjectModal';
 
 const Projects = () => {
   const { t, lang } = useLang();
-  const [selectedProject, setSelectedProject] = useState(null);
-
   const projects = getProjects(lang);
+
+  useSEO({
+    title: `${t.projects.title} | ${t.name}`,
+    description: "Portfolio of projects in Automation, Infrastructure, and AI.",
+    canonicalUrl: 'https://nimanavidi.com/projects'
+  });
 
   return (
     <section id="projects" className="py-24 px-8 md:px-16 lg:px-24 bg-slate-50 dark:bg-[#0a0f1c]">
@@ -26,10 +30,10 @@ const Projects = () => {
       {/* Bento Grid Layout */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(250px,auto)]">
         {projects.map((project, idx) => (
-          <div
+          <Link
+            to={`/projects/${project.slug}`}
             key={idx}
-            onClick={() => setSelectedProject(project)}
-            className={`${project.cols} relative group overflow-hidden rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 hover:border-transparent transition-all duration-500 shadow-xl cursor-pointer`}
+            className={`${project.cols} relative group overflow-hidden rounded-3xl bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 hover:border-transparent transition-all duration-500 shadow-xl`}
           >
             {/* Gradient Background on Hover */}
             <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
@@ -64,16 +68,9 @@ const Projects = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
-
-      {/* Project Modal */}
-      <ProjectModal
-        project={selectedProject}
-        isOpen={!!selectedProject}
-        onClose={() => setSelectedProject(null)}
-      />
     </section>
   );
 };

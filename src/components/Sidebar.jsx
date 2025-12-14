@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import { useLang } from '../context/LangContext';
 import { Home, User, Briefcase, Database, Mail, Globe, Send, Linkedin } from 'lucide-react';
 import profileImg from '../assets/profile1.png'; // Verified png extension
@@ -6,11 +7,11 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen }) => {
     const { lang, toggleLang, t } = useLang();
 
     const navItems = [
-        { name: t.nav.home, href: "#home", icon: <Home size={20} /> },
-        { name: t.nav.about, href: "#about", icon: <User size={20} /> },
-        { name: t.nav.skills, href: "#skills", icon: <Database size={20} /> },
-        { name: t.nav.projects, href: "#projects", icon: <Briefcase size={20} /> },
-        { name: t.nav.contact, href: "#contact", icon: <Mail size={20} /> },
+        { name: t.nav.home, to: "/", icon: <Home size={20} /> },
+        { name: t.nav.about, to: "/about", icon: <User size={20} /> },
+        { name: t.nav.skills, to: "/skills", icon: <Database size={20} /> },
+        { name: t.nav.projects, to: "/projects", icon: <Briefcase size={20} /> },
+        { name: t.nav.contact, to: "/contact", icon: <Mail size={20} /> },
     ];
 
     const socialLinks = [
@@ -21,7 +22,7 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen }) => {
 
     const sidebarClasses = `
     fixed top-0 bottom-0 z-50 w-[300px] 
-    bg-slate-900/95 backdrop-blur-xl border-slate-800/50
+    bg-slate-900/80 backdrop-blur-lg border-slate-800/50
     text-white transition-all duration-500 cubic-bezier(0.4, 0, 0.2, 1) overflow-y-auto
     [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']
     ${lang === 'fa' ? 'right-0 border-l' : 'left-0 border-r'}
@@ -85,11 +86,17 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen }) => {
                     {/* Navigation */}
                     <nav className="w-full flex-1 space-y-1">
                         {navItems.map((item) => (
-                            <a
+                            <NavLink
                                 key={item.name}
-                                href={item.href}
+                                to={item.to}
                                 onClick={() => setIsMobileOpen(false)}
-                                className="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 transition-all group"
+                                className={({ isActive }) =>
+                                    `flex items-center gap-3 px-4 py-3 rounded-xl transition-all group ${
+                                        isActive
+                                            ? 'bg-white/10 text-white'
+                                            : 'text-slate-400 hover:text-white hover:bg-white/5'
+                                    }`
+                                }
                             >
                                 <span className="group-hover:text-[#149ddd] transition-colors duration-300">
                                     {item.icon}
@@ -97,7 +104,7 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen }) => {
                                 <span className="text-sm uppercase tracking-wider font-medium group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform">
                                     {item.name}
                                 </span>
-                            </a>
+                            </NavLink>
                         ))}
                     </nav>
 

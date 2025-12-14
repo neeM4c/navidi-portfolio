@@ -1,35 +1,28 @@
-// D:\sc\MySite2\src\App.jsx
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { LangProvider } from './context/LangContext';
 import Layout from './components/Layout';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
-
-import FeaturedProjects from './components/FeaturedProjects';
+import Home from './pages/Home';
+import About from './pages/About';
+import Skills from './pages/Skills';
+import Projects from './pages/Projects';
+import ProjectDetail from './pages/ProjectDetail';
+import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
 
 function App() {
     return (
         <LangProvider>
             <Layout>
-                <div id="home">
-                    <Hero />
-                </div>
-                <FeaturedProjects />
-                <div id="about">
-                    <About />
-                </div>
-                <div id="skills">
-                    <Skills />
-                </div>
-                <div id="projects">
-                    <Projects />
-                </div>
-                <div id="contact">
-                    <Contact />
-                </div>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/skills" element={<Skills />} />
+                    <Route path="/projects" element={<Projects />} />
+                    <Route path="/projects/:slug" element={<ProjectDetail />} />
+                    <Route path="/contact" element={<Contact />} />
+                    <Route path="*" element={<NotFound />} />
+                </Routes>
             </Layout>
         </LangProvider>
     );
