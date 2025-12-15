@@ -29,7 +29,7 @@ export const getProjects = (lang) => [
         icon: <Server size={32} className="text-emerald-400" />,
         color: "from-emerald-500/20 to-teal-600/20",
         border: "border-emerald-500/30",
-        cols: "md:col-span-2"
+        cols: "col-span-1 lg:col-span-2"
     },
     {
         id: 'ai-time-sync',
@@ -50,7 +50,7 @@ export const getProjects = (lang) => [
         icon: <Clock size={32} className="text-cyan-400" />,
         color: "from-cyan-500/20 to-blue-600/20",
         border: "border-cyan-500/30",
-        cols: "md:col-span-1"
+        cols: "col-span-1"
     },
     {
         id: 'ai-studio',
@@ -71,7 +71,7 @@ export const getProjects = (lang) => [
         icon: <PenTool size={32} className="text-purple-400" />,
         color: "from-purple-500/20 to-pink-600/20",
         border: "border-purple-500/30",
-        cols: "md:col-span-1"
+        cols: "col-span-1"
     },
     {
         id: 'automation-scripts',
@@ -91,6 +91,6 @@ export const getProjects = (lang) => [
         icon: <Cpu size={32} className="text-amber-400" />,
         color: "from-amber-500/20 to-orange-600/20",
         border: "border-amber-500/30",
-        cols: "md:col-span-2"
+        cols: "col-span-1 lg:col-span-2"
     }
 ];

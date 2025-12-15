@@ -57,6 +57,7 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen }) => {
     ${lang === 'fa' ? 'right-0 border-l border-r-0' : 'left-0 border-r'}
     ${isMobileOpen ? 'translate-x-0' : (lang === 'fa' ? 'translate-x-full lg:translate-x-0' : '-translate-x-full lg:translate-x-0')}
     shadow-[0_0_50px_rgba(0,0,0,0.5)]
+    lg:translate-x-0
   `;
 
     return (
@@ -109,7 +110,7 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen }) => {
                                 href={link.href}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="p-2.5 bg-white/5 border border-white/10 rounded-full hover:bg-[#149ddd] hover:border-[#149ddd] hover:text-white transition-all duration-300 hover:shadow-[0_0_15px_rgba(20,157,221,0.5)] group"
+                                className="p-3.5 bg-white/5 border border-white/10 rounded-full hover:bg-[#149ddd] hover:border-[#149ddd] hover:text-white transition-all duration-300 hover:shadow-[0_0_15px_rgba(20,157,221,0.5)] group"
                             >
                                 <span className="text-slate-400 group-hover:text-white transition-colors">{link.icon}</span>
                             </a>

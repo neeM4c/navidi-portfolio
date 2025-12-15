@@ -18,11 +18,10 @@ const Layout = ({ children }) => {
 
             {/* Main Content */}
             <main
-                className="min-h-screen overflow-x-hidden"
-                style={{
-                    marginLeft: lang === 'en' ? SIDEBAR_WIDTH : 0,
-                    marginRight: lang === 'fa' ? SIDEBAR_WIDTH : 0,
-                }}
+                className={`
+                    min-h-screen overflow-x-hidden transition-all duration-300 ease-in-out
+                    ${lang === 'en' ? 'lg:ml-[300px]' : 'lg:mr-[300px]'}
+                `}
             >
                 {children}
             </main>

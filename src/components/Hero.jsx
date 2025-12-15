@@ -60,7 +60,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-[linear-gradient(rgba(20,157,221,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(20,157,221,0.05)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,black,transparent)]"></div>
       </div>
 
-      <div className="relative z-10 px-8 md:px-16 lg:px-24 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+      <div className="relative z-10 px-4 py-8 md:px-16 lg:px-24 lg:py-24 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
 
         {/* Text Content */}
         <div className="flex-1 text-center lg:text-left rtl:lg:text-right">
@@ -69,8 +69,8 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight drop-shadow-2xl">
-              <span className="block text-slate-400 text-2xl md:text-3xl font-light mb-2">{lang === 'en' ? "Hello, I'm" : "سلام، من"}</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 tracking-tight drop-shadow-2xl">
+              <span className="block text-slate-400 text-xl md:text-3xl font-light mb-2">{lang === 'en' ? "Hello, I'm" : "سلام، من"}</span>
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">
                 {t.name}
               </span>
